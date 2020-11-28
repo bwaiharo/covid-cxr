@@ -2,17 +2,8 @@
 
 ## Evolution of Machine Learning
 
-Recent advances in AI and ML have propelled the need to explain the models predictions. As more industries adopting AI/ML for all kinds of applications like forecasting sales, ranking products, rating employees, etc. We need better understanding how these complex AI/ML models behave when it achieves positive predictions as well as failed predictions.
+Advances in machine learning (ML), particularly deep neural networks (DNNs), have allowed us to extract and use the extensive information in unstructured data for applications in public and private sectors. In the banking area, these include modeling and analysis of text data on customer communications, complaints, emails, etc. However, the complexity of the underlying ML algorithms makes the results hard to interpret and explain to users and regulators. 
 
-## Who Needs to Know
-
-Data Scientists – These individuals who works and creates ML models. They are the first hands to experience and to reveal the underlining behaviors of the models. Having an explainable model would add value during ML development and troubleshooting. Especially valuable with image type of classifications to aid identify features contributed to predictions.
-
-Domain Experts – These are the individual with specialization in a particular field. Such as doctors that looks at a patient’s x-ray to decide if the case of ailment is positive or negative. Their extensive training and experience would complement the ML models. It is especially critical that when there is a disagreement between the model and human judgement. We need to know how the model made the conclusion and factors it used for the decision.
-
-Business Stakeholders – These individuals would make the decision if the ML program would have the necessary funding. The ML model must provide explanations that are human friendly. Buy-ins from the stakeholders is critical to proliferation the ML program.
-
-End Users – These are the people that will use the ML program on a daily basis. They are the eyes and guards of the model’s behavior. The human intuition coupled with explainable ML program would build trust and provide additional benefits in decision making.
 
 ## Why ML Explainability
 
@@ -20,40 +11,34 @@ ML programs interpret the data with algorithms to predict an event without knowi
 
 ## What Explainable Models are in Use:
 
-Integrated Gradients is recommended for neural networks especially for large input feature such as images. 
+There are several models in namely;
 
-XRAI is recommended for image models where it's desirable to localize attributions at the region vs. pixel level. 
+->Integrated Gradients is recommended for neural networks especially for large input feature such as images. 
 
-Shapley is recommended for tabular and non-differentiable models, which is the case in AutoML Tables models consisting of meta-ensembles of trees and neural networks.
+->XRAI is recommended for image models where it's desirable to localize attributions at the region vs. pixel level. 
 
-LIME is a ML model agnostic method by testing the ML model results when certain aspects are changed within the model. 
+->Shapley is recommended for tabular and non-differentiable models, which is the case in AutoML Tables models consisting of meta-ensembles of trees and neural networks.
 
-## What to Explain
+->LIME is a ML model agnostic method by testing the ML model results when certain aspects are changed within the model. 
 
-• Bias: This concern is high on the list of explainability. Does the ML model lean towards a specify data pattern creating unfairness? Ability to recognize this behavior that provides an opportunity for corrective action.
+## Explaining ML Classifiers with Lime
 
-• Correctness: Did the model use arrive at similar features to prediction the results as humans do? Or something totally different to how human would interprets the data.
+Machine learning algorithms can produce impressive results in classification, prediction, anomaly detection, and many other hard problems. Understanding what the results are based on is often complicated, since many algorithms are black boxes with little visibility into their inner working.
 
-• Human comprehensibility: Ability to convey the results that is equally understandable in language of the ML end user. As if one human to another human of equal skills.
+The idea of LIME is to give it a single datapoint, and the ML algorithm to use, and it will try to build understandable explanation for the output of the ML algorithm for that specific datapoint. Such as “because this person was found to be sneezing and coughing (datapoint features), there is a high probability they have a flu (ML output)”.
 
-• Improvement: Can the ML model explain the result that may be overlooked by domain experts? Provides an opportuntity to further enhance the ML model in iterations.
+The idea is to reduce bias while increasing correctness of the model i.e Did the model use arrive at similar features to prediction the results as humans do?
 
-• Robustness: Would the model detect interferences that may be unintentional or intentional. Ability to hightlight the differences and reveal the source of the error.
+The other part is for future use. Human comprehension, improvement of the model. Making it robust (ability to note intereference as intentional or unintentional) and transfarable.
 
-• Transferability: Is the explainability scope limited to single application or shareable across multiple domains. 
-
-## How to Explain
-
-• Text explanations by spoken lanugage relevant to the subject domain.
-
-• Visual explanation by highlighting or overlaying images with additional visual aids.
-
-• Local explanations focus on the area that contributed to the prediction vs trying to explain everything.
-
-• Explanations by example to show similarities with another example.
 
 ## Conclusion
 
-Explainability is one facet of ML journey. It is critical to ML practitioners and users to establish a trust in using ML programs. Explainability must be conveyed in human terms that doesn't require an user to have extensive ML training. The SHAP explanation is one of the latest model and adoptable across various ML techinques. SHAP has limitations, such as unrepresentative features and feature independence. But knowing these limitations are valuable to ensure there are balance of features and robust associations of features in the data source, respectively. Forming a feedback loop to iterate improvements in ML models.
+CNN SHAP fully utilizes the advantage of SHAP explanation in computing local feature importance, but avoids the curse of high feature dimensionality in explaining NLP tasks. By applying de-duplication in CNN SHAP output, we are able to provide more understandable and meaningful explanations of the model. We also proposed global explanation based on CNN SHAP, which quantifies the importance of n-grams globally.
+
+Another potential usage of CNN SHAP is as a surrogate explanation method approximating any text classification models, especially those much more complicated DNN models, using CNN and using the techniques here to explain the results. However, more work needs to be done to evaluate the performance of CNN SHAP as a surrogate explanation method. In addition, the method uses marginal expectations to ease the computational burdens in evaluating the conditional expectations in the SHAP formula in equation. This can perform poorly in some applications, so it in necessary to explore alternatives.
+
+## Reference
+https://arxiv.org/ftp/arxiv/papers/2008/2008.11825.pdf
 
 
