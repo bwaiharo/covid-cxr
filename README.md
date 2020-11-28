@@ -1,6 +1,6 @@
 # CS 677 Deep Learning - Project #2 Explainable COVID-19 Pneumonia
 ### Prof. Pantelis Monogioudis
-### By Student Alan Yeung
+### Benedict Waiharo
 
 ## System Setup
 
@@ -12,30 +12,23 @@ source activate tensorflow2_latest_p37
 
 export PATH=/opt/tljh/user/bin:$PATH
 
-## Project Github
-
-https://github.com/ayhkusa/covid-cxr
-
 
 ## Section I - Replicate LIME in https://github.com/aildnont/covid-cxr
 
 To Do: First you find this this implementation of the method called Local Interpretable Model-Agnostic Explanations (i.e. LIME). You also read this article and you get your hands dirty and replicate the results in your colab notebook with GPU enabled kernel(40%).
 
-### Alan's work: convert lime_explain.py to jupyter notebook
 
 Notebook: [lime_explain.ipynb](src/interpretability/lime_explain.ipynb)
 
 Run results: [Part I - LIME Model run results.pdf](src/interpretability/Part%20I%20-%20LIME%20Model%20run%20results.pdf)
 
-### Challenges:
 
-1. Outdated setup with recent version of tensorflow: [lime_explain.ipynb] need to change x as type double (predict_and_explain(x.astype('double'))
 
 ## Section II - Summary paper on the SHAP approach to explaining deep learning classifier
 
 To Do: A fellow AI engineer, tells you about another method called SHAP that stands for SHapley Additive exPlanations and she mentions that Shapley was a Nobel prize winner so it must be important. You then find out that Google is using it and wrote a readable white paper about it and your excitement grows. Your manager sees you on the corridor and mentions that your work is needed soon. You are keen to impress her and start writing your 3-5 page summary of the SHAP approach as can be applied to explaining deep learning classifiers such as the ResNet network used in (1). (40%)
 
-### Paper [summary_paper.md](summary_paper.md)
+### Paper [summary.md](summary.md)
 
 ## Section III - Add SHAP to existing x-ray model in https://github.com/aildnont/covid-cxr
 
