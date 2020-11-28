@@ -1,3 +1,37 @@
+Skip to content
+Why GitHub? 
+Team
+Enterprise
+Explore 
+Marketplace
+Pricing 
+Search
+
+Sign in
+Sign up
+cicorias
+/
+njit-covid-cxr
+100
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Join GitHub today
+GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
+
+njit-covid-cxr/src/data/preprocess.py /
+@cicorias
+cicorias make run on windows local gpu
+Latest commit b69d2b5 23 days ago
+ History
+ 2 contributors
+@bvanberl@cicorias
+168 lines (144 sloc)  9.14 KB
+  
 import numpy as np
 import pandas as pd
 import pydicom as dicom
@@ -151,10 +185,10 @@ def preprocess(cfg=None):
     # Split dataset into train, val and test sets
     val_split = cfg['DATA']['VAL_SPLIT']
     test_split = cfg['DATA']['TEST_SPLIT']
-    file_df_train, file_df_test = train_test_split(file_df, test_size=test_split, stratify=file_df['label'])
+    file_df_train, file_df_test = train_test_split(file_df, test_size=test_split, stratify=file_df['label'], random_state=42)
     relative_val_split = val_split / (1 - test_split)  # Calculate fraction of train_df to be used for validation
     file_df_train, file_df_val = train_test_split(file_df_train, test_size=relative_val_split,
-                                                      stratify=file_df_train['label'])
+                                                      stratify=file_df_train['label'], random_state=42)
 
     # Save training, validation and test sets
     if not os.path.exists(cfg['PATHS']['PROCESSED_DATA']):
@@ -166,3 +200,15 @@ def preprocess(cfg=None):
 
 if __name__ == '__main__':
     preprocess()
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
