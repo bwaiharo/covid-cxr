@@ -29,7 +29,7 @@ Forked Project: Add SHAP to existing x-ray model in https://github.com/aildnont/
 To Do: After your presentation, your manager is clearly impressed with the depth of the SHAP approach and asks for some results for explaining the COVID-19 diagnoses via it. You notice that the extremely popular SHAP Github repo already has an example with VGG16 network applied to ImageNet. You think it wont be too difficult to plugin the model you trained in (1) and explain it. (20%)
 
 
-Notebook: [shaptrain.ipynb](src/shaptrain.ipynb)
+
 
 
 
