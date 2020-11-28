@@ -11,11 +11,7 @@ ML programs interpret the data with algorithms to predict an event without knowi
 
 ## What Explainable Models are in Use:
 
-There are several models in namely;
-
-->Integrated Gradients is recommended for neural networks especially for large input feature such as images. 
-
-->XRAI is recommended for image models where it's desirable to localize attributions at the region vs. pixel level. 
+For the project;
 
 ->Shapley is recommended for tabular and non-differentiable models, which is the case in AutoML Tables models consisting of meta-ensembles of trees and neural networks.
 
